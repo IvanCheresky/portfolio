@@ -22,7 +22,7 @@ export const skills: Skill[] = [
   },
   {
     fileName: "html.svg",
-    description: "html & css",
+    description: "HTML & CSS",
   },
   {
     fileName: "javascript.svg",
@@ -52,7 +52,7 @@ export const skills: Skill[] = [
     fileName: "typescript.svg",
     description: "Typescript",
   },
-];
+].sort((a, b) => (a.description > b.description ? 1 : -1));
 
 export const interestedSkills: Skill[] = [
   {

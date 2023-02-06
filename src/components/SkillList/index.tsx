@@ -21,7 +21,7 @@ const SkillList = () => (
       })}
     </Grid>
     <Text mt="40px" fontSize="30px">
-      Interested In
+      Interested in or Currently learning:
     </Text>
     <Grid>
       {interestedSkills.map((skill) => {
