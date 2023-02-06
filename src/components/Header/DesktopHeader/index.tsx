@@ -1,34 +1,19 @@
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import {
-  Flex,
-  IconButton,
-  Text,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import routes from "@/utils/routes";
+import ColorSwitchButton from "../ColorSwitchButton";
 
 interface DesktopHeaderProps {
   currentRoute: string;
 }
 
 const DesktopHeader = ({ currentRoute }: DesktopHeaderProps) => {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   const fontColor = useColorModeValue("brand.black", "gray");
 
   return (
     <Flex alignItems="center" justify="space-between">
-      <IconButton
-        border="1px"
-        borderColor="brand.orange"
-        bg="transparent"
-        aria-label="Toggle light dark mode"
-        onClick={toggleColorMode}
-        icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-      />
+      <ColorSwitchButton />
       <Flex alignItems="center" columnGap="5vw" ml="10px">
         <Link href={routes.home.path}>
           <Text

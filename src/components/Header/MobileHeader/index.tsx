@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import React, { useState } from "react";
 import routes from "@/utils/routes";
+import ColorSwitchButton from "../ColorSwitchButton";
 
 interface MobileHeaderProps {
   currentRoute: string;
@@ -24,7 +25,8 @@ const MobileHeader = ({ currentRoute }: MobileHeaderProps) => {
   const bgColor = useColorModeValue("white", "brand.black");
 
   return (
-    <Flex alignItems="flex-end" justifyContent="flex-end">
+    <Flex alignItems="center" justifyContent="space-between">
+      <ColorSwitchButton />
       <IconButton
         aria-label="menu"
         icon={<HamburgerIcon />}
