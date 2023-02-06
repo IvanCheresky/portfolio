@@ -5,7 +5,11 @@ import Skill from "./Skill";
 
 const SkillList = () => (
   <Flex flexDir="column" alignItems="center" mt="40px">
-    <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+    <Grid
+      templateColumns="repeat(auto-fill, minmax(100px, 1fr))"
+      gap={6}
+      width="70%"
+    >
       {skills.map((skill) => {
         return (
           <Skill
