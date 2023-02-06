@@ -8,7 +8,7 @@ interface HeaderLayoutProps {
 }
 
 const HeaderLayout = ({ children, currentRoute }: HeaderLayoutProps) => {
-  const bg = useColorModeValue("white", "black");
+  const bg = useColorModeValue("white", "brand.black");
 
   return (
     <Box bg={bg} minW="100vw" minH="100vh" py="8" px="24">
