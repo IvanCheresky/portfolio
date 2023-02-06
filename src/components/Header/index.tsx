@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Link from "next/link";
-import routes from "../../utils/routes";
+import routes from "@/utils/routes";
 
 interface HeaderProps {
   currentRoute: string;

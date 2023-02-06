@@ -1,4 +1,11 @@
-const routes = {
+type RouteInfo = {
+  [name: string]: {
+    path: string;
+    name: string;
+  };
+};
+
+const routes: RouteInfo = {
   home: {
     path: "/",
     name: "Home",
