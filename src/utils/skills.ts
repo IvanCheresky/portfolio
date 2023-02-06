@@ -22,7 +22,7 @@ export const skills: Skill[] = [
   },
   {
     fileName: "html.svg",
-    description: "HTML & CSS",
+    description: "HTML/CSS",
   },
   {
     fileName: "javascript.svg",

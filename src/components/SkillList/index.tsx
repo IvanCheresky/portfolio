@@ -23,7 +23,7 @@ const SkillList = () => (
     <Text mt="40px" fontSize="30px">
       Interested in or Currently learning:
     </Text>
-    <Grid>
+    <Grid mt="12px">
       {interestedSkills.map((skill) => {
         return (
           <Skill
