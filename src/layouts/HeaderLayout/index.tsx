@@ -10,7 +10,9 @@ interface HeaderLayoutProps {
 const HeaderLayout = ({ children, currentRoute }: HeaderLayoutProps) => {
   const bg = useColorModeValue("white", "brand.black");
 
-  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
+  const [isLargerThan800] = useMediaQuery("(min-width: 800px)", {
+    fallback: true,
+  });
 
   return (
     <Box

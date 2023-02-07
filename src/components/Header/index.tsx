@@ -8,7 +8,9 @@ interface HeaderProps {
 }
 
 const Header = ({ currentRoute }: HeaderProps) => {
-  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
+  const [isLargerThan800] = useMediaQuery("(min-width: 800px)", {
+    fallback: true,
+  });
 
   if (isLargerThan800) {
     return <DesktopHeader currentRoute={currentRoute} />;
