@@ -5,6 +5,7 @@ import MooveItElement from "./MooveItElement";
 import LPElement from "./LPElement";
 import ZuvviiElement from "./ZuvviiElement";
 import DSElement from "./DSElement";
+import UBAElement from "./UBAElement";
 
 const Timeline = () => {
   return (
@@ -13,6 +14,7 @@ const Timeline = () => {
       <LPElement />
       <ZuvviiElement />
       <DSElement />
+      <UBAElement />
     </VerticalTimeline>
   );
 };
