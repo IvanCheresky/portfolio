@@ -30,6 +30,7 @@ const ZuvviiElement = () => {
         title="Zuvvii"
         description="A social media platform for sharing clips."
         elements={elements}
+        href="https://www.zuvvii.com/"
       />
     </VerticalTimelineElement>
   );

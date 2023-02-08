@@ -57,6 +57,7 @@ const MooveItElement = () => {
         description="US-based Software Factory"
         elementsTitle="Projects:"
         elements={elements}
+        href="https://moove-it.com/"
       />
     </VerticalTimelineElement>
   );

@@ -30,6 +30,7 @@ const LPElement = () => {
         title="LocalPayment"
         description="Payments service provider"
         elements={elements}
+        href="https://localpayment.com/"
       />
     </VerticalTimelineElement>
   );

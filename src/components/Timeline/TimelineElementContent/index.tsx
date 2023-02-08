@@ -8,6 +8,7 @@ interface TimelineElementContentProps {
   description: string;
   elementsTitle?: string;
   elements?: CarouselElement[];
+  href: string;
 }
 
 const TimelineElementContent = ({
@@ -15,6 +16,7 @@ const TimelineElementContent = ({
   description,
   elementsTitle,
   elements,
+  href,
 }: TimelineElementContentProps) => {
   return (
     <Flex
@@ -25,7 +27,7 @@ const TimelineElementContent = ({
       borderRadius="25px"
       p="20px"
     >
-      <Link href="https://mooveit.com/" style={{ alignSelf: "center" }}>
+      <Link href={href} style={{ alignSelf: "center" }}>
         <Text
           fontSize="40px !important"
           color="brand.orange"

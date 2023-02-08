@@ -21,7 +21,11 @@ const DSElement = () => {
       icon={<ReactIcon />}
       date="2016 - 2020"
     >
-      <TimelineElementContent title="DernySoftware" description={description} />
+      <TimelineElementContent
+        title="DernySoftware"
+        description={description}
+        href="https://play.google.com/store/apps/developer?id=Derny+Software"
+      />
     </VerticalTimelineElement>
   );
 };

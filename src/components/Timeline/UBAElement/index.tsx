@@ -21,6 +21,7 @@ const UBAElement = () => {
       <TimelineElementContent
         title="University Of Buenos Aires (UBA)"
         description={description}
+        href="https://www.uba.ar/"
       />
     </VerticalTimelineElement>
   );
