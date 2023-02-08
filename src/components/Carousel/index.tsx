@@ -67,10 +67,12 @@ const Carousel = ({ elements }: CarouselProps) => {
               aria-label="left"
               icon={<ChevronLeftIcon w={10} h={10} />}
               bg="brand.orange"
-              color="brand.white"
+              color="white"
               pos="absolute"
               left="-20px"
               top="50%"
+              borderRadius="45"
+              boxShadow="0 3px 6px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
               onClick={onLeftClick}
               _hover={{ bg: "brand.black" }}
             />
@@ -78,10 +80,13 @@ const Carousel = ({ elements }: CarouselProps) => {
               aria-label="left"
               icon={<ChevronRightIcon w={10} h={10} />}
               bg="brand.orange"
-              color="brand.white"
+              color="white"
               pos="absolute"
               right="-20px"
               top="50%"
+              borderRadius="45"
+              shadow="md"
+              boxShadow="0 3px 6px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%)"
               onClick={onRightClick}
               _hover={{ bg: "brand.black" }}
             />

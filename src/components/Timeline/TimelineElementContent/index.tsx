@@ -22,6 +22,7 @@ const TimelineElementContent = ({
       alignItems="center"
       border="1px"
       borderColor="brand.orange"
+      borderRadius="25px"
       p="20px"
     >
       <Link href="https://mooveit.com/" style={{ alignSelf: "center" }}>

@@ -4,6 +4,7 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { colors } from "@/utils/theme";
 import { CarouselElement } from "../../Carousel";
 import TimelineElementContent from "../TimelineElementContent";
+import useContentStyle from "@/hooks/useContentStyle";
 
 const ZuvviiElement = () => {
   const elements: CarouselElement[] = [
@@ -15,9 +16,11 @@ const ZuvviiElement = () => {
     },
   ];
 
+  const contentStyle = useContentStyle();
+
   return (
     <VerticalTimelineElement
-      contentStyle={{ background: "#000006", color: "#fff" }}
+      contentStyle={contentStyle}
       contentArrowStyle={{ borderRight: "7px solid  #000006" }}
       iconStyle={{ background: colors.brand.orange, color: "#fff" }}
       icon={<ReactIcon />}

@@ -3,13 +3,17 @@ import React from "react";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import { colors } from "@/utils/theme";
 import TimelineElementContent from "../TimelineElementContent";
+import useContentStyle from "@/hooks/useContentStyle";
 
 const UBAElement = () => {
   const description = `Graduate degree in Economics (Magna Cum Laude honors).
   Graduate degree in Information Systems (unfinished).`;
+
+  const contentStyle = useContentStyle();
+
   return (
     <VerticalTimelineElement
-      contentStyle={{ background: "#000006", color: "#fff" }}
+      contentStyle={contentStyle}
       contentArrowStyle={{ borderRight: "7px solid  #000006" }}
       iconStyle={{ background: colors.brand.orange, color: "#fff" }}
       icon={<ReactIcon />}
