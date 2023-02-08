@@ -48,7 +48,7 @@ const MooveItElement = () => {
     <VerticalTimelineElement
       contentStyle={contentStyle}
       contentArrowStyle={{ borderRight: "7px solid  #000006" }}
-      date="January 2021 - Present"
+      date="January 2022 - Present"
       iconStyle={{ background: colors.brand.orange, color: "#fff" }}
       icon={<ReactIcon />}
     >
