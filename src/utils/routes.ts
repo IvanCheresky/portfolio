@@ -1,11 +1,13 @@
-type RouteInfo = {
-  [name: string]: {
-    path: string;
-    name: string;
-  };
+export type RouteInfo = {
+  path: string;
+  name: string;
 };
 
-const routes: RouteInfo = {
+export type RoutesInfo = {
+  [name: string]: RouteInfo;
+};
+
+const routes: RoutesInfo = {
   home: {
     path: "/",
     name: "Home",

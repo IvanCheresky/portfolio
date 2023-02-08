@@ -9,7 +9,7 @@ const DSElement = () => {
   const description = `Freelance work and mobile apps.
   
   Over 100,000 downloads on the Google Play Store.
-  Using a variety of technologies including Java, .NET, LibGDX, Unity.`;
+  Used a variety of technologies including Java, .NET, LibGDX, Unity.`;
 
   const contentStyle = useContentStyle();
 
