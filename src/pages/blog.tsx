@@ -5,6 +5,7 @@ import useSWR from "swr";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { LinkIcon } from "@chakra-ui/icons";
+import Head from "next/head";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -16,6 +17,9 @@ const Blog = () => {
 
   return (
     <HeaderLayout currentRoute={routes.blog.path}>
+      <Head>
+        <title>Blog</title>
+      </Head>
       <Flex alignItems="center" flexDir="column" mt="4%" rowGap="5px">
         {data.map((metadata: any) => (
           <Box

@@ -7,12 +7,16 @@ import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 import HeaderLayout from "@/layouts/HeaderLayout";
 import { getFilesMetadata } from "@/utils/getFilePaths";
 import { CalendarIcon } from "@chakra-ui/icons";
+import Head from "next/head";
 
 const BlogPost = ({ post }: any) => {
   const [editor] = useState(() => withReact(createEditor()));
 
   return (
     <HeaderLayout currentRoute={`blog/${post.metadata.id}`}>
+      <Head>
+        <title>{post.metadata.title}</title>
+      </Head>
       <Flex w="100%" flexDir="column" alignItems="center" mt="5%" px="10%">
         <Flex
           w="100%"

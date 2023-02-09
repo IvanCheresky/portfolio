@@ -3,10 +3,14 @@ import HeaderLayout from "@/layouts/HeaderLayout";
 import routes from "@/utils/routes";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <HeaderLayout currentRoute={routes.home.path}>
+      <Head>
+        <title>Home</title>
+      </Head>
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}

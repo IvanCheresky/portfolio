@@ -1,7 +1,6 @@
 import { Box, useColorModeValue, useMediaQuery } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import Header from "@/components/Header";
-import Head from "next/head";
 
 interface HeaderLayoutProps {
   currentRoute: string;
@@ -23,9 +22,6 @@ const HeaderLayout = ({ children, currentRoute }: HeaderLayoutProps) => {
       py={isLargerThan800 ? "8" : "2"}
       px={isLargerThan800 ? "24" : "4"}
     >
-      <Head>
-        <title>Ivan Cheresky</title>
-      </Head>
       <Header currentRoute={currentRoute} />
       {children}
     </Box>

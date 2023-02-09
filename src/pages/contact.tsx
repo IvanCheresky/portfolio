@@ -4,10 +4,14 @@ import { ChevronDownIcon, EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import { Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 export default function Skills() {
   return (
     <HeaderLayout currentRoute={routes.contact.path}>
+      <Head>
+        <title>Contact</title>
+      </Head>
       <Text color="brand.orange" fontSize="70px" mt="2%">
         Get in touch
       </Text>
