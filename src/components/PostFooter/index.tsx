@@ -12,12 +12,17 @@ const PostFooter = ({ metadata }: PostFooterProps) => {
   const colorHash = new ColorHash();
 
   return (
-    <Flex alignItems="center" justifyContent="space-between" w="95%">
+    <Flex
+      alignItems="center"
+      justifyContent="space-between"
+      w="95%"
+      columnGap="10px"
+    >
       <Flex alignItems="center" columnGap="10px" flex={1}>
         <CalendarIcon />
         <Text>{new Date(metadata.createdAt).toLocaleString()}</Text>
       </Flex>
-      <Flex>
+      <Flex flexWrap="wrap" justifyContent="center">
         {metadata.tags.map((tag: string) => (
           <Tag
             key={tag}
