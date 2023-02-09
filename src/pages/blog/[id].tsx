@@ -3,33 +3,50 @@ import { promises as fs } from "fs";
 import path from "path";
 import { Editable, Slate, withReact } from "slate-react";
 import { createEditor } from "slate";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 import HeaderLayout from "@/layouts/HeaderLayout";
 import { getFilesMetadata } from "@/utils/getFilePaths";
+import { CalendarIcon } from "@chakra-ui/icons";
 
 const BlogPost = ({ post }: any) => {
   const [editor] = useState(() => withReact(createEditor()));
 
   return (
     <HeaderLayout currentRoute={`blog/${post.metadata.id}`}>
-      <Flex w="100%" flexDir="column" alignItems="center" pt="5%" px="20%">
-        <Text fontSize="35px" color="brand.orange">
-          {post.metadata.title}
-        </Text>
-        <Box w="100%" border="1px" borderColor="brand.orange">
-          <Slate editor={editor} value={post.content}>
-            <Editable
-              spellCheck
-              style={{
-                minHeight: "5rem",
-                maxHeight: "15rem",
-                overflow: "auto",
-                marginLeft: "0.7rem",
-              }}
-            />
-          </Slate>
-        </Box>
-        <Text>{new Date(post.metadata.createdAt).toLocaleString()}</Text>
+      <Flex w="100%" flexDir="column" alignItems="center" mt="5%" px="10%">
+        <Flex
+          w="100%"
+          flexDir="column"
+          alignItems="center"
+          border="1px"
+          borderColor="brand.orange"
+          borderRadius="25"
+          p="2%"
+          rowGap="10px"
+        >
+          <Text fontSize="35px" color="brand.orange">
+            {post.metadata.title}
+          </Text>
+          <Divider />
+          <Box w="100%">
+            <Slate editor={editor} value={post.content}>
+              <Editable
+                spellCheck
+                style={{
+                  minHeight: "5rem",
+                  maxHeight: "15rem",
+                  overflow: "auto",
+                  marginLeft: "0.7rem",
+                }}
+              />
+            </Slate>
+          </Box>
+          <Divider />
+          <Flex alignItems="center" columnGap="10px">
+            <CalendarIcon />
+            <Text>{new Date(post.metadata.createdAt).toLocaleString()}</Text>
+          </Flex>
+        </Flex>
       </Flex>
     </HeaderLayout>
   );
