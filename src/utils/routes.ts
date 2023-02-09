@@ -7,6 +7,10 @@ export type RoutesInfo = {
   [name: string]: RouteInfo;
 };
 
+export const getPostRoute = (postName: string) => {
+  return `/blog/${postName}`;
+};
+
 const routes: RoutesInfo = {
   home: {
     path: "/",
