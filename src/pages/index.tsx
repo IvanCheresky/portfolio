@@ -2,34 +2,41 @@ import { Flex, Text } from "@chakra-ui/react";
 import HeaderLayout from "@/layouts/HeaderLayout";
 import routes from "@/utils/routes";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <HeaderLayout currentRoute={routes.home.path}>
-      <Flex flexDir="column" alignItems="flex-start" h="100%">
-        <Text color="brand.orange" fontSize="90px" pt="15%">
-          Ivan Cheresky
-        </Text>
-        <Text fontSize="30px" mb="10px">
-          Software Developer
-        </Text>
-        <Link href={routes.contact.path}>
-          <Text
-            bg="brand.orange"
-            textTransform="uppercase"
-            w="auto"
-            border="3px solid"
-            borderColor="brand.orange"
-            borderRadius="6px"
-            px="24px"
-            mt="3%"
-            py="5px"
-            fontWeight="bold"
-          >
-            Contact me
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Flex flexDir="column" alignItems="flex-start" h="100%">
+          <Text color="brand.orange" fontSize="90px" pt="15%">
+            Ivan Cheresky
           </Text>
-        </Link>
-      </Flex>
+          <Text fontSize="30px" mb="10px">
+            Software Developer
+          </Text>
+          <Link href={routes.contact.path}>
+            <Text
+              bg="brand.orange"
+              textTransform="uppercase"
+              w="auto"
+              border="3px solid"
+              borderColor="brand.orange"
+              borderRadius="6px"
+              px="24px"
+              mt="3%"
+              py="5px"
+              fontWeight="bold"
+            >
+              Contact me
+            </Text>
+          </Link>
+        </Flex>
+      </motion.div>
     </HeaderLayout>
   );
 }

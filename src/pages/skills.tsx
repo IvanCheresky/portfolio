@@ -6,7 +6,7 @@ import SkillList from "@/components/SkillList";
 export default function Skills() {
   return (
     <HeaderLayout currentRoute={routes.skills.path}>
-      <Text color="brand.orange" fontSize="70px">
+      <Text color="brand.orange" fontSize="70px" mt="2%">
         My Skills
       </Text>
       <SkillList />
