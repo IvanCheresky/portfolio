@@ -1,9 +1,7 @@
-import { Flex, Text, useColorModeValue } from "@chakra-ui/react";
-import Link from "next/link";
+import { Flex, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import routes from "@/utils/routes";
 import ColorSwitchButton from "../ColorSwitchButton";
-import { motion as Motion } from "framer-motion";
 import AnimatedLink from "./AnimatedLink";
 
 interface DesktopHeaderProps {
