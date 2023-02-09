@@ -17,10 +17,10 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       >
         <Flex flexDir="column" alignItems="flex-start" h="100%">
-          <Text color="brand.orange" fontSize="90px" pt="15%">
+          <Text color="brand.orange" fontSize="7xl" pt="15%">
             Ivan Cheresky
           </Text>
-          <Text fontSize="30px" mb="10px">
+          <Text fontSize="3xl" mb="10px">
             Software Developer
           </Text>
           <Link href={routes.contact.path}>

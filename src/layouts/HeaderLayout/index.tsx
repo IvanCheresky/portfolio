@@ -21,6 +21,7 @@ const HeaderLayout = ({ children, currentRoute }: HeaderLayoutProps) => {
       minH="100vh"
       py={isLargerThan800 ? "8" : "2"}
       px={isLargerThan800 ? "24" : "4"}
+      position="absolute"
     >
       <Header currentRoute={currentRoute} />
       {children}

@@ -10,7 +10,7 @@ export default function Skills() {
       <Head>
         <title>Skills</title>
       </Head>
-      <Text color="brand.orange" fontSize="70px" mt="2%">
+      <Text color="brand.orange" fontSize="7xl" mt="2%">
         My Skills
       </Text>
       <SkillList />

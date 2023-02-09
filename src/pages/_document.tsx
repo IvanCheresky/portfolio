@@ -6,7 +6,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body style={{ backgroundColor: "#000000" }}>
+      <body>
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <Main />
         <NextScript />

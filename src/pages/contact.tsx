@@ -12,7 +12,7 @@ export default function Skills() {
       <Head>
         <title>Contact</title>
       </Head>
-      <Text color="brand.orange" fontSize="70px" mt="2%">
+      <Text color="brand.orange" fontSize="7xl" mt="2%">
         Get in touch
       </Text>
       <motion.div
@@ -26,6 +26,7 @@ export default function Skills() {
           rowGap="10"
           mt="5%"
           px="10%"
+          overflow="scroll"
         >
           <Link href="mailto:ivancheresky@gmail.com">
             <Flex alignItems="center" columnGap="20px">
