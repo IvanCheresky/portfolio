@@ -9,7 +9,7 @@ import { LinkIcon } from "@chakra-ui/icons";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Blog = () => {
-  const { data, error } = useSWR("/api/blogTitles", fetcher);
+  const { data, error } = useSWR("/api/postsMetadata", fetcher);
 
   if (error) return <Text>Failed to load</Text>;
   if (!data) return <Text>Loading...</Text>;
@@ -17,9 +17,9 @@ const Blog = () => {
   return (
     <HeaderLayout currentRoute={routes.blog.path}>
       <Flex alignItems="center" flexDir="column" mt="4%" rowGap="5px">
-        {data.map((postTitle: string) => (
+        {data.map((metadata: any) => (
           <Box
-            key={postTitle}
+            key={metadata.id}
             border="1px"
             borderColor="brand.orange"
             borderRadius="25"
@@ -27,7 +27,7 @@ const Blog = () => {
             p="15px"
           >
             <Link
-              href={getPostRoute(postTitle)}
+              href={getPostRoute(metadata.id)}
               style={{ width: "100%", display: "block" }}
             >
               <Flex
@@ -37,7 +37,7 @@ const Blog = () => {
               >
                 <LinkIcon />
                 <Text fontWeight="bold" fontSize="30px">
-                  {postTitle}
+                  {metadata.title}
                 </Text>
               </Flex>
             </Link>

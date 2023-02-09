@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { promises as fs } from "fs";
-import { getFileNames } from "@/utils/getFilePaths";
 import path from "path";
 import { Editable, Slate, withReact } from "slate-react";
 import { createEditor } from "slate";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import HeaderLayout from "../../layouts/HeaderLayout";
+import HeaderLayout from "@/layouts/HeaderLayout";
+import { getFilesMetadata } from "@/utils/getFilePaths";
 
 const BlogPost = ({ post }: any) => {
   const [editor] = useState(() => withReact(createEditor()));
 
   return (
-    <HeaderLayout currentRoute={`blog/${post.title}`}>
+    <HeaderLayout currentRoute={`blog/${post.metadata.id}`}>
       <Flex w="100%" flexDir="column" alignItems="center" pt="5%" px="20%">
         <Text fontSize="35px" color="brand.orange">
-          {post.title}
+          {post.metadata.title}
         </Text>
         <Box w="100%" border="1px" borderColor="brand.orange">
           <Slate editor={editor} value={post.content}>
@@ -29,7 +29,7 @@ const BlogPost = ({ post }: any) => {
             />
           </Slate>
         </Box>
-        <Text>{new Date(post.createdAt).toLocaleString()}</Text>
+        <Text>{new Date(post.metadata.createdAt).toLocaleString()}</Text>
       </Flex>
     </HeaderLayout>
   );
@@ -38,11 +38,11 @@ const BlogPost = ({ post }: any) => {
 export default BlogPost;
 
 export async function getStaticPaths() {
-  const filePaths = await getFileNames(true);
+  const filesMetadata = await getFilesMetadata();
 
   return {
-    paths: filePaths.map((filePath) => ({
-      params: { id: filePath },
+    paths: filesMetadata.map((metadata) => ({
+      params: { id: metadata.id },
     })),
     fallback: false,
   };
@@ -51,12 +51,22 @@ export async function getStaticPaths() {
 export async function getStaticProps(context: any) {
   const jsonDirectory = path.join(process.cwd(), "blogPosts");
 
-  const post = await fs.readFile(
-    `${jsonDirectory}/${context.params.id}.json`,
+  const metadata = await fs.readFile(
+    `${jsonDirectory}/${context.params.id}/metadata.json`,
+    "utf8"
+  );
+
+  const content = await fs.readFile(
+    `${jsonDirectory}/${context.params.id}/content.json`,
     "utf8"
   );
 
   return {
-    props: { post: JSON.parse(post) },
+    props: {
+      post: {
+        metadata: JSON.parse(metadata),
+        content: JSON.parse(content).content,
+      },
+    },
   };
 }

@@ -24,6 +24,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-vertical-timeline-component": "^3.6.0",
+    "recursive-readdir": "^2.2.3",
     "slate": "^0.90.0",
     "slate-react": "^0.90.0",
     "swr": "^2.0.3",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "@types/react-vertical-timeline-component": "^3.3.3",
+    "@types/recursive-readdir": "^2.2.1",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0"
   }
