@@ -1,29 +1,97 @@
 {
+  "type": "doc",
   "content": [
     {
       "type": "paragraph",
-      "children": [
-        { "text": "An opening paragraph with a " },
+      "content": [
         {
-          "type": "link",
-          "url": "https://example.com",
-          "children": [{ "text": "link" }]
+          "type": "text",
+          "text": "This web portfolio was created using "
         },
-        { "text": " in it." }
-      ]
-    },
-    {
-      "type": "quote",
-      "children": [
         {
-          "type": "paragraph",
-          "children": [{ "text": "A wise quote." }]
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "Nextjs"
+        },
+        {
+          "type": "text",
+          "text": ", "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "Chakra UI"
+        },
+        {
+          "type": "text",
+          "text": ", and "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "Typescript"
+        },
+        {
+          "type": "text",
+          "text": "."
         }
       ]
     },
     {
       "type": "paragraph",
-      "children": [{ "text": "A closing paragraph!" }]
+      "content": [
+        {
+          "type": "text",
+          "text": "The animations were mostly created with "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "Framer Motion"
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "The text editor used is "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "tiptap"
+        },
+        {
+          "type": "text",
+          "text": "."
+        }
+      ]
     }
   ]
 }

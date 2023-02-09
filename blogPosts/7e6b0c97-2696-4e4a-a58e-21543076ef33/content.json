@@ -1,29 +1,135 @@
 {
+  "type": "doc",
   "content": [
     {
       "type": "paragraph",
-      "children": [
-        { "text": "An opening paragraph with a " },
+      "content": [
         {
-          "type": "link",
-          "url": "https://example.com",
-          "children": [{ "text": "link" }]
+          "type": "text",
+          "text": "To avoid having to create a separate backend, this blog serializes the content of some tiptap text (my chosen text editor) and sends it to the "
         },
-        { "text": " in it." }
-      ]
-    },
-    {
-      "type": "quote",
-      "children": [
         {
-          "type": "paragraph",
-          "children": [{ "text": "A wise quote." }]
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "Next.js"
+        },
+        {
+          "type": "text",
+          "text": " server side."
         }
       ]
     },
     {
       "type": "paragraph",
-      "children": [{ "text": "A closing paragraph!" }]
+      "content": [
+        {
+          "type": "text",
+          "text": "From there, the contents and metadata of the blog post are uploaded to the "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "github"
+        },
+        {
+          "type": "text",
+          "text": " repo that contains the web app, which triggers a "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "Vercel"
+        },
+        {
+          "type": "text",
+          "text": " deploy."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "At build time the use of "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "SSG"
+        },
+        {
+          "type": "text",
+          "text": " with "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "getStaticPaths "
+        },
+        {
+          "type": "text",
+          "text": "and "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "getStaticProps "
+        },
+        {
+          "type": "text",
+          "text": "ensure that the path and the "
+        },
+        {
+          "type": "text",
+          "marks": [
+            {
+              "type": "bold"
+            }
+          ],
+          "text": "HTML"
+        },
+        {
+          "type": "text",
+          "text": " for the new post are created at runtime."
+        }
+      ]
+    },
+    {
+      "type": "paragraph"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "text",
+          "text": "Note: this is a work in progress, as of the time of writing this POST, the post files are being added to the repo manually."
+        }
+      ]
     }
   ]
 }

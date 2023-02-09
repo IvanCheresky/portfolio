@@ -6,6 +6,7 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { LinkIcon } from "@chakra-ui/icons";
 import Head from "next/head";
+import PostFooter from "@/components/PostFooter";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -34,15 +35,18 @@ const Blog = () => {
               href={getPostRoute(metadata.id)}
               style={{ width: "100%", display: "block" }}
             >
-              <Flex
-                alignItems="center"
-                justifyContent="center"
-                columnGap="10px"
-              >
-                <LinkIcon />
-                <Text fontWeight="bold" fontSize="30px">
-                  {metadata.title}
-                </Text>
+              <Flex flexDir="column" alignItems="center" rowGap="10px">
+                <Flex
+                  alignItems="center"
+                  justifyContent="center"
+                  columnGap="10px"
+                >
+                  <LinkIcon />
+                  <Text fontWeight="bold" fontSize="30px">
+                    {metadata.title}
+                  </Text>
+                </Flex>
+                <PostFooter metadata={metadata} />
               </Flex>
             </Link>
           </Box>

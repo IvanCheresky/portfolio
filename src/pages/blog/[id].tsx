@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { promises as fs } from "fs";
 import path from "path";
-import { Editable, Slate, withReact } from "slate-react";
-import { createEditor } from "slate";
 import { Box, Divider, Flex, Text } from "@chakra-ui/react";
 import HeaderLayout from "@/layouts/HeaderLayout";
 import { getFilesMetadata } from "@/utils/getFilePaths";
-import { CalendarIcon } from "@chakra-ui/icons";
+import { EditorContent, useEditor } from "@tiptap/react";
 import Head from "next/head";
+import StarterKit from "@tiptap/starter-kit";
+import PostFooter from "@/components/PostFooter";
 
 const BlogPost = ({ post }: any) => {
-  const [editor] = useState(() => withReact(createEditor()));
+  const editor = useEditor({
+    extensions: [StarterKit],
+    content: post.content,
+    editable: false,
+  });
 
   return (
     <HeaderLayout currentRoute={`blog/${post.metadata.id}`}>
@@ -33,23 +37,10 @@ const BlogPost = ({ post }: any) => {
           </Text>
           <Divider />
           <Box w="100%">
-            <Slate editor={editor} value={post.content}>
-              <Editable
-                spellCheck
-                style={{
-                  minHeight: "5rem",
-                  maxHeight: "15rem",
-                  overflow: "auto",
-                  marginLeft: "0.7rem",
-                }}
-              />
-            </Slate>
+            <EditorContent editor={editor} />
           </Box>
           <Divider />
-          <Flex alignItems="center" columnGap="10px">
-            <CalendarIcon />
-            <Text>{new Date(post.metadata.createdAt).toLocaleString()}</Text>
-          </Flex>
+          <PostFooter metadata={post.metadata} />
         </Flex>
       </Flex>
     </HeaderLayout>
@@ -86,7 +77,7 @@ export async function getStaticProps(context: any) {
     props: {
       post: {
         metadata: JSON.parse(metadata),
-        content: JSON.parse(content).content,
+        content: JSON.parse(content),
       },
     },
   };
