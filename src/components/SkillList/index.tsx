@@ -20,10 +20,14 @@ const SkillList = () => (
         );
       })}
     </Grid>
-    <Text mt="40px" fontSize="30px">
+    <Text mt="40px" fontSize="30px" mb="10px">
       Interested in or currently learning:
     </Text>
-    <Grid mt="12px">
+    <Grid
+      templateColumns="repeat(auto-fill, minmax(100px, 1fr))"
+      gap={6}
+      width="70%"
+    >
       {interestedSkills.map((skill) => {
         return (
           <Skill
