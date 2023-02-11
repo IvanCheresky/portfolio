@@ -10,7 +10,13 @@ export default function Experience() {
       <Head>
         <title>Experience</title>
       </Head>
-      <Box mt="50px">
+      <Box
+        mt="50px"
+        mr={{
+          base: "100px",
+          md: "0px",
+        }}
+      >
         <Timeline />
       </Box>
     </HeaderLayout>
