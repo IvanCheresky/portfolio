@@ -1,10 +1,12 @@
 import HeaderLayout from "@/layouts/HeaderLayout";
 import routes from "@/utils/routes";
-import { ChevronDownIcon, EmailIcon, PhoneIcon } from "@chakra-ui/icons";
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, Icon } from "@chakra-ui/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import MessageIcon from "@mui/icons-material/Message";
+import CallIcon from "@mui/icons-material/Call";
 
 export default function Skills() {
   return (
@@ -30,16 +32,16 @@ export default function Skills() {
         >
           <Link href="mailto:ivancheresky@gmail.com">
             <Flex alignItems="center" columnGap="20px">
-              <EmailIcon color="brand.orange" w="10" h="10" />
+              <Icon as={MessageIcon} color="brand.orange" w="10" h="10" />
               <Text fontSize="30px">ivancheresky@gmail.com</Text>
             </Flex>
           </Link>
           <Flex alignItems="center" columnGap="20px">
-            <PhoneIcon color="brand.orange" w="10" h="10" />
+            <Icon as={CallIcon} color="brand.orange" w="10" h="10" />
             <Text fontSize="30px">54-9-1167035370</Text>
           </Flex>
           <Flex alignItems="center" columnGap="20px">
-            <ChevronDownIcon color="brand.orange" w="10" h="10" />
+            <Icon as={LocationOnIcon} color="brand.orange" w="10" h="10" />
             <Text fontSize="30px">Buenos Aires</Text>
           </Flex>
         </Flex>
