@@ -5,6 +5,7 @@ export const colors = {
   brand: {
     black: "#121212",
     orange: "#FF4D00",
+    darkorange: "#CC3F18",
     gray: "#878383",
   },
 };

@@ -28,13 +28,13 @@ export default function Home() {
               bg="brand.orange"
               textTransform="uppercase"
               w="auto"
-              border="3px solid"
               borderColor="brand.orange"
               borderRadius="6px"
-              px="24px"
+              px="27px"
               mt="3%"
-              py="5px"
+              py="8px"
               fontWeight="bold"
+              _hover={{ bg: "brand.darkorange" }}
             >
               Contact me
             </Text>
