@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Text, Link as ChakraLink } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 import Carousel, { CarouselElement } from "../../Carousel";
@@ -28,13 +28,13 @@ const TimelineElementContent = ({
       p="20px"
     >
       <Link href={href} style={{ alignSelf: "center" }}>
-        <Text
+        <ChakraLink
           fontSize="40px !important"
           color="brand.orange"
           textAlign="center"
         >
           {title}
-        </Text>
+        </ChakraLink>
       </Link>
       <Text pb="10px" whiteSpace="pre-line" textAlign="center">
         {description}

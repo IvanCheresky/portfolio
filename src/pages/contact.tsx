@@ -1,12 +1,14 @@
 import HeaderLayout from "@/layouts/HeaderLayout";
 import routes from "@/utils/routes";
-import { Flex, Text, Icon } from "@chakra-ui/react";
+import { Flex, Text, Icon, Link as ChakraLink } from "@chakra-ui/react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MessageIcon from "@mui/icons-material/Message";
 import CallIcon from "@mui/icons-material/Call";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 export default function Skills() {
   return (
@@ -33,16 +35,28 @@ export default function Skills() {
           <Link href="mailto:ivancheresky@gmail.com">
             <Flex alignItems="center" columnGap="20px">
               <Icon as={MessageIcon} color="brand.orange" w="10" h="10" />
-              <Text fontSize="30px">ivancheresky@gmail.com</Text>
+              <ChakraLink fontSize="30px">ivancheresky@gmail.com</ChakraLink>
             </Flex>
           </Link>
           <Flex alignItems="center" columnGap="20px">
             <Icon as={CallIcon} color="brand.orange" w="10" h="10" />
             <Text fontSize="30px">54-9-1167035370</Text>
           </Flex>
+          <Link href="https://www.linkedin.com/in/ivancheresky/">
+            <Flex alignItems="center" columnGap="20px">
+              <Icon as={LinkedInIcon} color="brand.orange" w="10" h="10" />
+              <ChakraLink fontSize="30px">Linkedin</ChakraLink>
+            </Flex>
+          </Link>
+          <Link href="https://github.com/ivancheresky">
+            <Flex alignItems="center" columnGap="20px">
+              <Icon as={GitHubIcon} color="brand.orange" w="10" h="10" />
+              <ChakraLink fontSize="30px">Github</ChakraLink>
+            </Flex>
+          </Link>
           <Flex alignItems="center" columnGap="20px">
             <Icon as={LocationOnIcon} color="brand.orange" w="10" h="10" />
-            <Text fontSize="30px">Buenos Aires</Text>
+            <Text fontSize="30px">Buenos Aires, Argentina</Text>
           </Flex>
         </Flex>
       </motion.div>
