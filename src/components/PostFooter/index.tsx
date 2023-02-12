@@ -3,9 +3,10 @@ import { Box, Flex, Tag, Text } from "@chakra-ui/react";
 import ColorHash from "color-hash";
 import React from "react";
 import getContrastingColor from "@/utils/getContrastingColor";
+import Metadata from "@/types/metadata";
 
 interface PostFooterProps {
-  metadata: any;
+  metadata: Metadata;
 }
 
 const PostFooter = ({ metadata }: PostFooterProps) => {

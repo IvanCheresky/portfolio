@@ -8,8 +8,14 @@ import { EditorContent, useEditor } from "@tiptap/react";
 import Head from "next/head";
 import StarterKit from "@tiptap/starter-kit";
 import PostFooter from "@/components/PostFooter";
+import Post from "@/types/post";
+import { GetStaticProps } from "next";
 
-const BlogPost = ({ post }: any) => {
+interface BlogPostProps {
+  post: Post;
+}
+
+const BlogPost = ({ post }: BlogPostProps) => {
   const editor = useEditor({
     extensions: [StarterKit],
     content: post.content,
@@ -60,16 +66,16 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(context: any) {
+export const getStaticProps: GetStaticProps = async (context) => {
   const jsonDirectory = path.join(process.cwd(), "blogPosts");
 
   const metadata = await fs.readFile(
-    `${jsonDirectory}/${context.params.id}/metadata.json`,
+    `${jsonDirectory}/${context?.params?.id}/metadata.json`,
     "utf8"
   );
 
   const content = await fs.readFile(
-    `${jsonDirectory}/${context.params.id}/content.json`,
+    `${jsonDirectory}/${context?.params?.id}/content.json`,
     "utf8"
   );
 
@@ -81,4 +87,4 @@ export async function getStaticProps(context: any) {
       },
     },
   };
-}
+};

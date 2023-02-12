@@ -7,6 +7,7 @@ import Link from "next/link";
 import { LinkIcon } from "@chakra-ui/icons";
 import Head from "next/head";
 import PostFooter from "@/components/PostFooter";
+import Metadata from "@/types/metadata";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
@@ -22,7 +23,7 @@ const Blog = () => {
         <title>Blog</title>
       </Head>
       <Flex alignItems="center" flexDir="column" mt="4%" rowGap="5px">
-        {data.map((metadata: any) => (
+        {data.map((metadata: Metadata) => (
           <Box
             key={metadata.id}
             border="1px"

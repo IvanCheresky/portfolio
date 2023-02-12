@@ -1,5 +1,6 @@
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
+import type { Styles } from "@chakra-ui/theme-tools";
 
 export const colors = {
   brand: {
@@ -15,8 +16,8 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
-const styles = {
-  global: (props: any) => ({
+const styles: Styles = {
+  global: (props) => ({
     body: {
       bg: mode("white", colors.brand.black)(props),
     },
